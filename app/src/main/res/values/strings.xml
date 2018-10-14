@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Exchange Rates</string>
+    <string name="usd">USD</string>
+    <string name="ic_flags">ic_flags</string>
+    <string name="currency">Currency</string>
+    <string name="buy">Buy</string>
+    <string name="sell">Sell</string>
+    <string name="ic_bank">ic bank</string>
+    <string name="distance">Distance</string>
+</resources>

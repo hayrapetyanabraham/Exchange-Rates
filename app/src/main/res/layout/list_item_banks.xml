@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="itemVisible"
+            type="boolean" />
+
+        <variable
+            name="bank_name"
+            type="String" />
+
+        <variable
+            name="location"
+            type="String" />
+
+        <variable
+            name="buy"
+            type="double" />
+
+        <variable
+            name="sell"
+            type="double" />
+
+    </data>
+
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+     >
+
+        <ImageView
+            android:id="@+id/image_view_bank"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:contentDescription="@string/ic_bank"
+            android:src="@drawable/ic_bank"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/text_view_bank_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
+            android:ellipsize="end"
+            android:maxEms="10"
+            android:text="@{bank_name}"
+            app:layout_constraintStart_toEndOf="@+id/image_view_bank"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="Ararat Bank" />
+
+        <TextView
+            android:id="@+id/text_view_location"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{location}"
+            app:layout_constraintEnd_toEndOf="@+id/text_view_bank_name"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/text_view_bank_name"
+            app:layout_constraintTop_toBottomOf="@+id/text_view_bank_name"
+            tools:text="0.5km" />
+
+        <TextView
+            android:id="@+id/text_view_buy"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:text="@{Double.toString(buy)}"
+            app:layout_constraintBottom_toBottomOf="@+id/text_view_location"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/text_view_bank_name"
+            tools:text="0.00" />
+
+        <TextView
+            android:id="@+id/text_view_sell"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="48dp"
+            android:text="@{Double.toString(sell)}"
+            app:layout_constraintBottom_toBottomOf="@+id/text_view_buy"
+            app:layout_constraintEnd_toStartOf="@+id/text_view_buy"
+            app:layout_constraintTop_toTopOf="@+id/text_view_buy"
+            tools:text="0.00" />
+
+    </android.support.constraint.ConstraintLayout>
+
+</layout>
