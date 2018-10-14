@@ -5,10 +5,10 @@ import android.databinding.DataBindingUtil;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
-import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Toast;
 
 import com.example.exchangerates.R;
 import com.example.exchangerates.adapter.AdapterBanks;
@@ -41,7 +41,8 @@ public class ActivityRates extends AppCompatActivity implements ViewRatesCallbac
 
     @Override
     public void onError(String message) {
-        Log.d(TAG, message);
+        Toast toast = Toast.makeText(this, message, Toast.LENGTH_SHORT);
+        toast.show();
     }
 
     @Override
@@ -77,7 +78,6 @@ public class ActivityRates extends AppCompatActivity implements ViewRatesCallbac
     @Override
     public void onListItemClicked(Bank item) {
         Intent intent = new Intent(ActivityRates.this, ActivityBranches.class);
-        intent.putExtra(AppConstants.SerializableKeys.BANKS, item);
         intent.putExtra(AppConstants.SerializableKeys.BANKS, item);
         startActivity(intent);
     }
