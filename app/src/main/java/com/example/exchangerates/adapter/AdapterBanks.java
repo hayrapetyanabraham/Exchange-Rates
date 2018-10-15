@@ -64,11 +64,8 @@ public class AdapterBanks extends RecyclerView.Adapter<RecyclerView.ViewHolder> 
 
     @Override
     public void onBindViewHolder(@NonNull RecyclerView.ViewHolder viewHolder, int position) {
-        if (viewHolder instanceof ViewHeader) {
-            ViewHeader viewHeader = (ViewHeader) viewHolder;
-            viewHeader.binding.setText(mContext.getString(R.string.distance));
-
-        } else {
+        if (viewHolder instanceof ViewHeader) return;
+        
             ViewHolderBanks viewHolderBanks = (ViewHolderBanks) viewHolder;
             Bank bank = mBanks.get(position - 1);
             viewHolderBanks.binding.setBankName(bank.getTitle());
@@ -78,7 +75,7 @@ public class AdapterBanks extends RecyclerView.Adapter<RecyclerView.ViewHolder> 
                 viewHolderBanks.binding.setBuy(currencyCurrent.getBuy());
                 viewHolderBanks.binding.setSell(currencyCurrent.getSell());
             }
-        }
+      
     }
 
     @Override
