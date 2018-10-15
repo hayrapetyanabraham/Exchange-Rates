@@ -52,10 +52,8 @@ public class AdapterRates extends RecyclerView.Adapter<RecyclerView.ViewHolder> 
     @Override
     public void onBindViewHolder(@NonNull RecyclerView.ViewHolder viewHolder, int position) {
 
-        if (viewHolder instanceof ViewHeader) {
-            ViewHeader viewHeader = (ViewHeader) viewHolder;
-            viewHeader.binding.setText(mContext.getString(R.string.distance));
-        } else {
+        if (viewHolder instanceof ViewHeader) return;
+            
             ViewHolderRates viewHolderBanks = (ViewHolderRates) viewHolder;
             Map<String, Currency> currencyMap = mCurrencyList.get(mRatesMapKeys[position - 1]);
             viewHolderBanks.binding.setCurrencyType(mRatesMapKeys[position - 1]);
@@ -64,7 +62,7 @@ public class AdapterRates extends RecyclerView.Adapter<RecyclerView.ViewHolder> 
                 viewHolderBanks.binding.setBuy(currencyCurrent.getBuy());
                 viewHolderBanks.binding.setSell(currencyCurrent.getSell());
             }
-        }
+        
     }
 
     @Override
